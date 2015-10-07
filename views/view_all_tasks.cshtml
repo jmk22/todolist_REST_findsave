@@ -7,16 +7,16 @@
     <h1>Here is your list of tasks:</h1>
     <ul>
       @foreach (var task in Model) {
-        <li>@task.GetDescription()</li>
-        <ul>
-          <li>Status:
+        <li>@task.GetDescription()
+          <p>ID: @task.GetId()</p>
+          <p>Status:
             @if (task.IsCompleted()) {
               <text>Completed</text>
             } else {
               <text>Not completed</text>
             }
-          </li>
-        </ul>
+          </p>
+        </li>
       }
     </ul>
     <p><a href="/">Add new task</a></p>

@@ -6,7 +6,7 @@ namespace ToDoList
   public class Task{
     private string _description;
     private bool _completed;
-    // private int _id;
+    private int _id;
 
     private static List<Task> instances = new List<Task> {};
 
@@ -14,7 +14,7 @@ namespace ToDoList
     {
       _description = taskDescription;
       _completed = false;
-      // _id = instances.Count;
+      _id = instances.Count + 1;
       // _id = ListOfTasks.Count;
       instances.Add(this);
     }
@@ -32,9 +32,9 @@ namespace ToDoList
     public bool IsCompleted(){
       return _completed;
     }
-    // public int GetId(){
-    //   return _id;
-    // }
+    public int GetId(){
+      return _id;
+    }
     // public void CompleteTask(){
     //   _completed = true;
     // }
