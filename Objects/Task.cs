@@ -5,17 +5,15 @@ namespace ToDoList
 {
   public class Task{
     private string _description;
-    // private bool _completed;
+    private bool _completed;
     // private int _id;
 
     private static List<Task> instances = new List<Task> {};
-    // public static List<string> ListOfTasks = new List<string> {};
 
     public Task(string taskDescription)
     {
       _description = taskDescription;
-      // ListOfTasks.Add(this.GetDescription());
-      // _completed = false;
+      _completed = false;
       // _id = instances.Count;
       // _id = ListOfTasks.Count;
       instances.Add(this);
@@ -31,9 +29,9 @@ namespace ToDoList
     //   _description = newDescription;
     // }
 
-    // public bool IsCompleted(){
-    //   return _completed;
-    // }
+    public bool IsCompleted(){
+      return _completed;
+    }
     // public int GetId(){
     //   return _id;
     // }
@@ -46,13 +44,8 @@ namespace ToDoList
     // public static Task Find(int id){
     //   return instances[id-1];
     // }
-    // public void Save()
-    // {
-    //   ListOfTasks.Add(this.GetDescription());
-    // }
     public static void DeleteAll()
     {
-      // ListOfTasks.Clear();
       instances.Clear();
     }
   }

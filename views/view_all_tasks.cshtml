@@ -8,6 +8,15 @@
     <ul>
       @foreach (var task in Model) {
         <li>@task.GetDescription()</li>
+        <ul>
+          <li>Status:
+            @if (task.IsCompleted()) {
+              <text>Completed</text>
+            } else {
+              <text>Not completed</text>
+            }
+          </li>
+        </ul>
       }
     </ul>
     <p><a href="/">Add new task</a></p>
