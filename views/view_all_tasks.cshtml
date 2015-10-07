@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+  </head>
+  <body>
+    <h1>Here is your list of tasks:</h1>
+    <ul>
+      @foreach (var task in Model) {
+        <li>@task.GetDescription()</li>
+      }
+    </ul>
+    <p><a href="/">Add new task</a></p>
+    <form action="/tasks_cleared" method="post">
+      <button type="submit" name="button">Clear All Tasks</button>
+    </form>
+  </body>
+</html>
