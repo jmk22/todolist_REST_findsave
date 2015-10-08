@@ -22,10 +22,14 @@ namespace ToDoList
               var AllTasks = Task.All();
               return View["tasks.cshtml", AllTasks];
             };
-            Post["/tasks_cleared"] = _ => {
-              Task.DeleteAll();
-              return View["tasks_cleared.cshtml"];
+            Get["/tasks/{id}"] = parameters => {
+              var task = Task.Find(parameters.id);
+              return View["/task.cshtml", task];
             };
+            // Post["/tasks/clear"] = _ => {
+            //   Task.DeleteAll();
+            //   return View["tasks_cleared.cshtml"];
+            // };
         }
     }
 }
