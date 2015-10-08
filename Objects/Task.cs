@@ -41,9 +41,9 @@ namespace ToDoList
     public static List<Task> All() {
       return instances;
     }
-    // public static Task Find(int id){
-    //   return instances[id-1];
-    // }
+    public static Task Find(int id){
+      return instances[id-1];
+    }
     public static void DeleteAll()
     {
       instances.Clear();

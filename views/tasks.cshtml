@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+  </head>
+  <body>
+    <h1>All tasks</h1>
+    <ul>
+      @foreach (var task in Model) {
+        <li><a href="/tasks/@task.GetId()">@task.GetDescription()</a></li>
+      }
+    </ul>
+    <a href="/tasks/new">Add new task</a>
+  </body>
+</html>

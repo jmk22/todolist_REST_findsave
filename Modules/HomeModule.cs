@@ -10,15 +10,17 @@ namespace ToDoList
             Get["/"] = _ => {
                 return View["index.cshtml"];
             };
-            Post["/task_added"] = _ => {
-              var NewTask = new Task(Request.Form["new-task"]);
-              // NewTask.Save();
-              return View["task_added.cshtml", NewTask];
-            };
-            Get["/view_all_tasks"] = _ => {
-              // var AllTasks = Task.ListOfTasks;
+            Get["/tasks"] = _ => {
               var AllTasks = Task.All();
-              return View["view_all_tasks.cshtml", AllTasks];
+              return View["tasks.cshtml", AllTasks];
+            };
+            Get["/tasks/new"] = _ => {
+              return View["task_form.cshtml"];
+            };
+            Post["/tasks"] = _ => {
+              var NewTask = new Task(Request.Form["new-task"]);
+              var AllTasks = Task.All();
+              return View["tasks.cshtml", AllTasks];
             };
             Post["/tasks_cleared"] = _ => {
               Task.DeleteAll();
